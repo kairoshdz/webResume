@@ -5,36 +5,65 @@ body {
     padding: 0;
 }
 
-
 .header {
-    text-align: center;
-    color:azure;
-    h1 {
-    font-size: 20px;
-    margin: 0px auto;
-    padding-top: 10px;
-    color:azure;
-     text-shadow: 8px 6px 20px #3767a5;
-    } 
-    
-    h2 {
-        font-family : 'Space Mono', monospace;
-        color: #ffffff;
-        text-shadow: 2px 2px 10px #8e7adc;
-        margin: 10px 0;
-        font-size: 15px;
-        padding : 0px 10px;
-    }
-
-    p {
-        font-size: 13px;
-        margin: 0;
-    } 
-    a {
-        color: #5283c3;
-        text-shadow: 2px 2px 10px #8e7adc;
-    }
+  text-align: center;
+  color:azure;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  transition: min-height 0.3s ease;
+  text-align: center;
 }
+.header h1 {
+  font-size: 20px;
+  margin: 0px auto;
+  padding-top: 10px;
+  color:azure;
+  text-shadow: 8px 6px 20px #3767a5;
+  } 
+
+.header h2 {
+  font-family : 'Space Mono', monospace;
+  color: #ffffff;
+  text-shadow: 2px 2px 10px #8e7adc;
+  margin: 10px 0;
+  font-size: 15px;
+  padding : 0px 10px;
+}
+.header p {
+  font-size: 13px;
+  margin: 0;
+} 
+.header a {
+  color: #5283c3;
+  text-shadow: 2px 2px 10px #8e7adc;
+}
+.header .download-resume {
+  position: absolute;
+  right: 40px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #2261ff;
+}
+
+/* Hide header elements before hover */
+.header h2,header p, .header a, .header .download-resume {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.header:hover h2, .header:hover p, .header:hover a, .header:hover .download-resume {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 
 
 html, body {
@@ -53,7 +82,7 @@ html, body {
 }
 
 .slide {
-    border-radius: 50px;
+  border-radius: 50px;
   min-height: 100vh;
   height: auto;
   margin: 0px auto;
